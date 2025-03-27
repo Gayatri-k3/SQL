@@ -1,7 +1,7 @@
 /*1) CREATE 2 TABLES WITH 10 columns(TABLES: Cricket_info, FootBall_info)*/
 
-CREATE TABLE cricket_info(id int, venue varchar(20), team varchar(20), team_rank int, team_captain varchar(20), noOfPlayers int, player_name varchar(20), matches_played int,  player_age int, score_avg varchar(10));
-CREATE TABLE football_info(id int, venue varchar(20), team varchar(20), team_rank int, team_captain varchar(20), noOfPlayers int, player_name varchar(20), matches_played int,  player_age int, goal_avg varchar(10));
+CREATE TABLE cricket_info(id int, venue varchar(20), team varchar(20), team_rank int, team_captain varchar(20), noOfPlayers int, player_name varchar(20), matches_played int,  player_age int, score_avg varchar(20));
+CREATE TABLE football_info(id int, venue varchar(20), team varchar(20), team_rank int, team_captain varchar(20), noOfPlayers int, player_name varchar(20), matches_played int,  player_age int, goal_avg varchar(20));
 ALTER table football_info modify column goal_avg varchar(20);
 /*2) INSERT 15 data for each table*/
 INSERT INTO cricket_info values(1, 'Bengaluru', 'RCB', 2, 'Rajat Patidar', 22, 'Rajat Patidar', 28, 31, '34.71');
@@ -23,28 +23,28 @@ SELECT * FROM CRICKET_INFO;
 
 
 
-INSERT INTO football_info values(1, 'Portugal', 'Arsenal', 2, 'Martin Odegaard', 27, 'Martin Odegaard', 185, 26, '0.23 per match');
-INSERT INTO football_info VALUES(2, 'Argentina', 'Barcelona', 10, 'Lionel Messi', 34, 'Lionel Messi', 672, 778, '0.86 per match');
-INSERT INTO football_info VALUES(3, 'Brazil', 'Real Madrid', 7, 'Cristiano Ronaldo', 36, 'Cristiano Ronaldo', 450, 438, '1.03 per match');
-INSERT INTO football_info VALUES(4, 'France', 'Paris Saint-Germain', 10, 'Kylian Mbappe', 23, 'Kylian Mbappe', 201, 247, '0.81 per match');
-INSERT INTO football_info VALUES(5, 'Egypt', 'Liverpool', 11, 'Mohamed Salah', 31, 'Mohamed Salah', 186, 303, '0.61 per match');
-INSERT INTO football_info VALUES(6, 'Belgium', 'Manchester City', 17, 'Kevin De Bruyne', 32, 'Kevin De Bruyne', 96, 317, '0.30 per match');
-INSERT INTO football_info VALUES(7, 'Poland', 'Bayern Munich', 9, 'Robert Lewandowski', 34, 'Robert Lewandowski', 344, 375, '0.92 per match');
-INSERT INTO football_info VALUES(8, 'Norway', 'Borussia Dortmund', 9, 'Erling Haaland', 22, 'Erling Haaland', 86, 89, '0.97 per match');
-INSERT INTO football_info VALUES(9, 'Spain', 'Atletico Madrid', 7, 'Antoine Griezmann', 32, 'Antoine Griezmann', 145, 304, '0.48 per match');
-INSERT INTO football_info VALUES(10, 'England', 'Tottenham Hotspur', 10, 'Harry Kane', 30, 'Harry Kane', 210, 317, '0.66 per match');
-INSERT INTO football_info VALUES(11, 'Germany', 'Chelsea', 29, 'Kai Havertz', 24, 'Kai Havertz', 32, 139, '0.23 per match');
-INSERT INTO football_info VALUES(12, 'Netherlands', 'Manchester United', 18, 'Bruno Fernandes', 28, 'Bruno Fernandes', 61, 173, '0.35 per match');
-INSERT INTO football_info VALUES(13, 'Italy', 'Juventus', 8, 'Paulo Dybala', 29, 'Paulo Dybala', 115, 293, '0.39 per match');
-INSERT INTO football_info VALUES(14, 'Senegal', 'Bayern Munich', 10, 'Sadio Mane', 31, 'Sadio Mane', 120, 269, '0.45 per match');
-INSERT INTO football_info VALUES(15, 'Sweden', 'AC Milan', 11, 'Zlatan Ibrahimovic', 41, 'Zlatan Ibrahimovic', 511, 866, '0.59 per match');
-SELECT * FROM FOOTBALL_INFO;
+INSERT INTO football_info VALUES(1, 'Portugal', 'Arsenal', 2, 'Martin Odegaard', 27, 'Martin Odegaard', 185, 26, '0.23 per match');
+INSERT INTO football_info VALUES(2, 'Argentina', 'Barcelona', 10, 'Lionel Messi', 34, 'Lionel Messi', 672, 34, '0.86 per match');
+INSERT INTO football_info VALUES(3, 'Brazil', 'Real Madrid', 7, 'Cristiano Ronaldo', 36, 'Cristiano Ronaldo', 450, 36, '1.03 per match');
+INSERT INTO football_info VALUES(4, 'France', 'Paris Saint-Germain', 10, 'Kylian Mbappe', 23, 'Kylian Mbappe', 201, 23, '0.81 per match');
+INSERT INTO football_info VALUES(5, 'Egypt', 'Liverpool', 11, 'Mohamed Salah', 31, 'Mohamed Salah', 186, 31, '0.61 per match');
+INSERT INTO football_info VALUES(6, 'Belgium', 'Manchester City', 17, 'Kevin De Bruyne', 32, 'Kevin De Bruyne', 96, 32, '0.30 per match');
+INSERT INTO football_info VALUES(7, 'Poland', 'Bayern Munich', 9, 'Robert Lewandowski', 34, 'Robert Lewandowski', 344, 34, '0.92 per match');
+INSERT INTO football_info VALUES(8, 'Norway', 'Borussia Dortmund', 9, 'Erling Haaland', 22, 'Erling Haaland', 86, 22, '0.97 per match');
+INSERT INTO football_info VALUES(9, 'Spain', 'Atletico Madrid', 7, 'Antoine Griezmann', 32, 'Antoine Griezmann', 145, 32, '0.48 per match');
+INSERT INTO football_info VALUES(10, 'England', 'Tottenham Hotspur', 10, 'Harry Kane', 30, 'Harry Kane', 210, 30, '0.66 per match');
+INSERT INTO football_info VALUES(11, 'Germany', 'Chelsea', 29, 'Kai Havertz', 24, 'Kai Havertz', 32, 24, '0.23 per match');
+INSERT INTO football_info VALUES(12, 'Netherlands', 'Manchester United', 18, 'Bruno Fernandes', 28, 'Bruno Fernandes', 61, 28, '0.35 per match');
+INSERT INTO football_info VALUES(13, 'Italy', 'Juventus', 8, 'Paulo Dybala', 29, 'Paulo Dybala', 115, 29, '0.39 per match');
+INSERT INTO football_info VALUES(14, 'Senegal', 'Bayern Munich', 10, 'Sadio Mane', 31, 'Sadio Mane', 120, 31, '0.45 per match');
+INSERT INTO football_info VALUES(15, 'Sweden', 'AC Milan', 11, 'Zlatan Ibrahimovic', 41, 'Zlatan Ibrahimovic', 511, 41, '0.59 per match');
 
 /*3) By using alter add 2 columns*/
 ALTER TABLE football_info
 ADD COLUMN position varchar(50),
 ADD COLUMN nationality varchar(50);
-
+ALTER TABLE FOOTBALL_INFO DROP COLUMN positioN;
+ALTER TABLE FOOTBALL_INFO DROP COLUMN NATIONALITY;
 
 ALTER TABLE cricket_info
 ADD COLUMN player_role varchar(50),
@@ -137,4 +137,21 @@ WHERE player_name IN ('Lionel Messi', 'Harry Kane');
 
 /*7) Fetch the data using Where, AND, OR, IN, NOT IN, BETWEEN, NOT BETWEEN,
 LIKE, NOT LIKE.*/
+SELECT * FROM cricket_info
+WHERE player_name LIKE 'Vira%' AND team NOT IN ('MI', 'CSK', 'SRH');
 
+SELECT * FROM cricket_info
+WHERE player_name IN ('Virat Kohli', 'AB de Villiers') AND player_age NOT BETWEEN 20 AND 30;
+
+SELECT * FROM cricket_info
+WHERE team = 'RCB' AND team_rank BETWEEN 1 AND 5 OR location = 'Mumbai';
+
+
+SELECT * FROM football_info
+WHERE team = 'Arsenal' AND team_rank BETWEEN 1 AND 5 OR location = 'Portugal';
+
+SELECT * FROM football_info
+WHERE player_name IN ('Cristiano Ronaldo', 'Lionel Messi') AND player_age NOT BETWEEN 25 AND 30;
+
+SELECT * FROM football_info
+WHERE player_name LIKE 'Lion%' AND team NOT IN ('Barcelona', 'PSG', 'Liverpool');
