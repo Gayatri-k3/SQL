@@ -144,13 +144,13 @@ SELECT COUNT(id) AS total_tourists FROM tourist_info;
 
 SELECT AVG(num_of_vacation_days) AS average_vacation_days FROM tourist_info;
 
-SELECT MAX(num_of_vacation_days) AS max_vacation_days, MIN(num_of_vacation_days) AS min_vacation_days FROM tourist_info;
+SELECT MAX(num_of_vacation_days) AS max_vacation_days FROM tourist_info;
 
 SELECT mode_of_transportation, COUNT(mode_of_transportation) AS count 
 FROM tourist_info 
 GROUP BY mode_of_transportation;
 
-SELECT MIN(vacation_start_date) AS earliest_vacation, MAX(vacation_start_date) AS latest_vacation FROM tourist_info;
+SELECT MIN(vacation_start_date) AS earliest_vacation FROM tourist_info;
 
 
 
@@ -158,14 +158,10 @@ SELECT type_of_bus, COUNT(*) AS total_buses
 FROM bmtc_details 
 GROUP BY type_of_bus;
 
-SELECT route_num, SUM(price) AS total_revenue 
+SELECT route_num, SUM(price) AS total
 FROM bmtc_details 
 GROUP BY route_num;
 
-SELECT src, COUNT(*) AS bus_count 
-FROM bmtc_details 
-GROUP BY src 
-HAVING COUNT(*) > 2;
 
 SELECT type_of_bus, AVG(price) AS avg_price 
 FROM bmtc_details 
@@ -187,7 +183,4 @@ FROM tourist_info
 GROUP BY mode_of_transportation 
 HAVING COUNT(*) > 3;
 
-SELECT guide_name, COUNT(*) AS tourist_count 
-FROM tourist_info 
-GROUP BY guide_name 
-HAVING COUNT(*) > 2;
+
