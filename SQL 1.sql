@@ -32,7 +32,7 @@ INSERT INTO airports VALUES (12, 'Dubai', 'Indira_Gandhi', 'New_Delhi', 'Int', '
 INSERT INTO airports VALUES (13, 'Dubai', 'Indira_Gandhi', 'New_Delhi', 'Int', 'IND');
 INSERT INTO airports VALUES (14, 'Dubai', 'Indira_Gandhi', 'New_Delhi', 'Int', 'IND');
 INSERT INTO airports VALUES (15, 'Dubai', 'Indira_Gandhi', 'New_Delhi', 'Int', 'IND');
-
+DROP table fooball_info;
 
 CREATE TABLE hospital_info (hospital_id INT, hospital_name VARCHAR(20), location VARCHAR(20), total_beds INT, specialty VARCHAR(20), contact_number VARCHAR(15));
 INSERT INTO hospital_info VALUES (1, 'AIIMS', 'New Delhi', 2500, 'Multi-Specialty', '+91-11-26588500');
@@ -101,3 +101,45 @@ INSERT INTO scam_info VALUES(14, 'Fake Degree Scam', 'China', 2018, 9000000, 'Ed
 INSERT INTO scam_info VALUES(15, 'Romance Scam', 'Argentina', 2022, 5000000, 'Online Fraud');
 SELECT * FROM scam_info;
 
+SELECT * FROM hospital_info;
+
+DELETE FROM hospital_info WHERE hospital_id = 7;
+SELECT * FROM hospital_info WHERE hospital_id between 2 and 5;
+DELETE FROM hospital_info WHERE hospital_id between 2 and 5;
+
+
+select * from cricket_info;
+select * from football_info;
+
+select COUNT(*) AS NO_OF_TEAMS from FOOTBALL_INFO;
+
+SELECT SUM(GAMES_PLAYED) AS TOTAL_GAMES FROM FOOTBALL_INFO;
+select MAX(TEAM_RANK) AS LAST_RANK from FOOTBALL_INFO;
+
+select MIN(TEAM_RANK) AS TOP_RANK from FOOTBALL_INFO;
+
+SELECT AVG(TOTAL_PLAYERS) AS AVG_PLAYERS FROM FOOTBALL_INFO;
+
+SELECT UPPER(PLAYER_NAME) FROM football_info;
+
+SELECT TEAM, LENGTH(TEAM) FROM FOOTBALL_INFO;
+
+SELECT SUM(noOfPlayers) FROM FOOTBALL_INFO WHERE ID < 5;
+
+
+DROP TABLE FOOTBALL_INFO;
+
+select sum(matches_played), team from football_info group by team;
+select count(venue), player_name from football_info group by player_name;
+
+select min(team_rank), team from football_info group by team;
+
+select min(team_rank) as highest_rank, team from football_info group by team having highest_rank>5;
+
+create table dynasties_of_India(id int not null unique, dyn_name varchar(30) not null unique, ruler_name varchar(30), ruler_age int not null, capital varchar(20) not null,check (ruler_age>18));
+desc dynasties_of_India;
+insert into dynasties_of_India values
+(1, 'Maurya', 'Chandragupta maurya', 20, 'pata;iputra'),
+(2, 'Chalukya', 'Jayasimha', 34, 'Badami'),
+(3, 'Pallava', 'SimhaVishnu', 19, 'Kanchipuram');
+select * from dynasties_of_India;

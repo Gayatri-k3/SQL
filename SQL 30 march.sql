@@ -28,22 +28,6 @@ desc pkl_info;
 SELECT * FROM PKL_INFO;
 
 
-select avg(avg_win_rate) from pkl_info;
-
-select sum(total_matches_played) from pkl_info;
-
-select max(won_count) as most_won from pkl_info;
-
-select min(lost_count) as least_lost from pkl_info;
-
-select team_name, min(lost_count) as least_lost from pkl_info group by team_name having least_lost < 5;
-select team_captain, max(won_count) as most_won from pkl_info group by team_captain having most_won > 10;
-
-
-
-
-
-
 ALTER table pkl_info add column captain_position varchar(10);
 update pkl_info set captain_position = 'Raider' where id = 1;
 update pkl_info set captain_position = 'Raider' where id = 2;
@@ -65,6 +49,16 @@ update pkl_info set captain_position = 'AllRounder' where id = 17;
 update pkl_info set captain_position = 'Defender' where id = 18;
 update pkl_info set captain_position = 'Raider' where id = 19;
 update pkl_info set captain_position = 'Defender' where id = 20;
+
+
+select avg(avg_win_rate) from pkl_info;
+select sum(total_matches_played) from pkl_info;
+select max(won_count) as most_won from pkl_info;
+select min(lost_count) as least_lost from pkl_info;
+select team_name, min(lost_count) as least_lost from pkl_info group by team_name having least_lost < 5;
+select team_captain, max(won_count) as most_won from pkl_info group by team_captain having most_won > 10;
+select team_captain, max(total_no_points) as max_points from pkl_info group by team_captain;
+
 
 
 INSERT INTO cosmetic_info VALUES
@@ -106,6 +100,8 @@ select country_origin, max(price) as high_price from cosmetic_info group by coun
 select country_origin, count(type_of_cosmetic) as most_products_by_Country from cosmetic_info group by country_origin;
 select is_comedogenic, count(product_name) as is_comedogenic_product from cosmetic_info group by is_comedogenic;
 select is_vegan, count(brand) as vegan_brands from cosmetic_info group by is_vegan;
+select avg(price) from cosmetic_info;
+
 
 INSERT INTO MOVIES_INFO VALUES
 (1, 'Inception', 'English', 'Leonardo DiCaprio', 'Elliot Page', 'Christopher Nolan', 160000000, 2010, 9, 829000000),
@@ -160,4 +156,7 @@ select movie_name, max(box_office_collection) as maximum_collection from movies_
 select director, count(director) as num_movies_directed from movies_info group by director having num_movies_directed > 2;
 select mov_lang, count(actor_female) as num_of_actorsf_by_language from movies_info group by mov_lang ;
 select director, sum(box_office_collection) as highest_collection_director from movies_info group by director;
-
+select actor_male, count(actor_male) as movies_acted from movies_info group by actor_male;
+select min(box_office_collection) from movies_info;
+select min(release_year) from movies_info;
+select avg(budget) from movies_info;

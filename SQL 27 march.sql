@@ -2,7 +2,7 @@
 CREATE TABLE bmtc_details(id int, type_of_bus varchar(20), src varchar(20), dest varchar(20), route_num varchar(10), bus_num varchar(10), num_of_stops int, price bigint, start_time time, end_time time);
 CREATE TABLE tourist_info(id int, name_of_tourist varchar(20),ph_num varchar(15), mode_of_transportation varchar(15), native varchar(20), destination varchar(20), guide_name varchar(20), vacation_start_date DATE, vacation_end_date date, num_of_vacation_days int);
 
-2) Insert 20 data for each table.
+/*2) Insert 20 data for each table.*/
 
 INSERT INTO bmtc_details (id, type_of_bus, src, dest, route_num, bus_num, num_of_stops, price, start_time, end_time) 
 VALUES (1, 'AC Volvo', 'Majestic', 'Electronic City', '335E', 'KA01AB1234', 15, 60, '06:30:00', '07:45:00');
