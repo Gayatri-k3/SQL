@@ -29,7 +29,7 @@ INSERT INTO clg_info VALUES
 (5, 'PES', 'Banglore', 'Autonomous', 7),
 (6, 'NITK', 'Surathkal', 'Autonomous', 3),
 (7, 'DSCE', 'Banglore', 'VTU', 5),
-(8, 'NMAM', 'Belgaum', 'VTU', 6),
+(8, 'NMIT', 'Belgaum', 'VTU', 6),
 (9, 'JSS', 'Mysore', 'Autonomous', 9),
 (10, 'Basaveshwar Engineering Clg', 'Bagalkot', 'VTU', 10),
 (11, 'CMRIT', 'Banglore', 'VTU', 11),
@@ -61,6 +61,30 @@ delete from stud_info where blood_grp = 'O+';
 
 
 
+select * from clg_info;
+
+select * from stud_info;
+
+select max(attendance) from stud_info where attendance in (1,2,3,4,5);
+
+select min(attendance) from stud_info where attendance between 1 and 5;
+
+select count(*) from stud_info where engg_branch = 'AIML' and engg_branch = 'ISE';
+
+select sum(stud_id) from stud_info;
+
+select avg(attendance) from stud_info where attendance not between 5 and 15;
+
+select max(attendance) from stud_info where attendance not in (6,7,8,9);
+
+select count(*) from stud_info where engg_branch = 'CSE' or blood_grp = 'O+';
+
+
+select * from clg_info c inner join stud_info s on c.stud_id=s.stud_id;
+select * from clg_info c left join stud_info s on c.stud_id=s.stud_id;
+select * from clg_info c right join stud_info s on c.stud_id=s.stud_id;
+
+select 
 
 
 
@@ -70,47 +94,32 @@ delete from stud_info where blood_grp = 'O+';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+alter table clg_info add column no_of_branches int;
 
 Alter table clg_info modify column clg_id bigint;
-Alter table clg_info modify column stud_id bigint;
+Alter table clg_info modify column  clg_name varchar(50);
 Alter table clg_info modify column affiliation enum( 'VTU', 'Autonomous');
 
-Update clg_info set no_of_branches = 15 where collegeid = 1;
-Update clg_info set no_of_branches = 10 where collegeid = 2;
-Update clg_info set no_of_branches = 7 where collegeid = 4;
-Update clg_info set no_of_branches = 4 where collegeid = 3;
-Update clg_info set no_of_branches = 2 where collegeid = 15;
+Update clg_info set no_of_branches = 15 where clg_id = 1;
+Update clg_info set no_of_branches = 10 where clg_id = 2;
+Update clg_info set no_of_branches = 7 where clg_id = 4;
+Update clg_info set no_of_branches = 4 where clg_id = 3;
+Update clg_info set no_of_branches = 2 where clg_id = 15;
 
-Delete from clg_info where collegeid = 1;
-Delete from clg_info where college_name = 'CMRIT';
-Delete from clg_info where collegeid = 3;
-Delete from clg_info where college_name = 'NMAM';
+Delete from clg_info where clg_id = 1;
+Delete from clg_info where clg_name = 'CMRIT';
+Delete from clg_info where clg_id = 3;
+Delete from clg_info where clg_name = 'NMIT';
 
 Select count(*) from clg_info where location = 'Bangalore' and affiliation = 'Autonomous';
 
-Select max(no_of_branches) from college_info where no_of_branches in (1, 5, 4, 3, 15);
+Select max(no_of_branches) from clg_info where no_of_branches in (1, 5, 4, 3, 15);
 
-Select min(no_of_branches) from college_info where no_of_branches not in (1, 5, 4, 3, 15);
+Select min(no_of_branches) from clg_info where no_of_branches not in (1, 5, 4, 3, 15);
 
-Select * from clg_info where studid between 2 and 8;
-Select * from clg_info where studid not between 1 and 15;
+Select * from clg_info where stud_id between 2 and 8;
+Select * from clg_info where stud_id not between 9 and 15;
 
-Select avg(studid) from college_info;
-Select sum(no_of_branches) from college_info;
+Select avg(stud_id) from clg_info;
+Select sum(no_of_branches) from clg_info;
 
